@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App;
+use App\Models\ArticlesLang;
 
 class ArticlesController extends Controller
 {
     public function index($id='default')
     {
-        
-        return 'Articless ' . App::getLocale();
+        $articles = ArticlesLang::all()->all();
+        print_r( $articles);
     }
 
 }
