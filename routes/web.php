@@ -14,7 +14,7 @@ Route::group(['prefix'=>App\Http\Middleware\LocaleMiddleware::getLocale()], func
 
     Route::get('/', 'MainController@index');
     
-    Route::get('articles/{url}', 'ArticlesController@index')->name('articles');
+    Route::get('articles/{url?}', 'ArticlesController@index')->name('articles');
     
     Route::get('news/{url}', 'NewsController@index')->name('news');
     

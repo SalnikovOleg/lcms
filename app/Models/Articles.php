@@ -2,9 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Models\PagesTree;
+use App\Models\Tables\Articles as ArticlesTable;
 
-class Articles extends Model
+class Articles extends Pagestree
 {
-    //
+    function __construct(ArticlesTable $articlesTable)
+    {
+        $this->model = $articlesTable;
+    }
+
 }
