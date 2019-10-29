@@ -6,18 +6,57 @@ use App;
 class PagesTree {
     protected $model;
 
+    private $page;
+    private $items;
+
     public function getByUrl($url) {
-        $entity = $this->model->where('url', $url)->firstOrFail();
-        //
+        return $this->model->with('content')->where('url', $url)->firstOrFail();
     }
 
     public function getByParent($parent)
     {
-        return $this->model->where('parent', $parent)->get();    
+        return $this->model->with('content')->where('parent', $parent)->get();  
     }
     
-    public function get($id) 
+    public function getById($id) 
     {
-        return $this->model->find((int)$id);
+        return $this->model->with('content')->findOrFail((int)$id);
+    }
+
+    public function loadByUrl($url)
+    {
+        $this->page = $this->getByUrl($url);
+        if ($this->page->node == 1) {
+            $this->items = $this->getByParent($this->page->id);
+        }
+        return $this;
+    }
+
+    public function loadById($id)
+    {
+        $this->page = $this->getById($id);
+        if ($this->page->node == 1) {
+            $this->items = $this->getByParent($this->page->id);
+        }
+        return $this;
+    }
+
+    public function getPage()
+    {
+        return $this->page;
+    }
+    
+    public function getItems()
+    {
+        return $this->items;
+    }
+
+    public function getMeta()
+    {
+        return [
+            'title' => $this->page->content->meta_title,
+            'description' => $this->page->content->meta_description,
+            'keywords' => $this->page->content->meta_keywords,
+        ];
     }
 }

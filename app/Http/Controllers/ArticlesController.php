@@ -10,30 +10,27 @@ class ArticlesController extends Controller
     private $articles; 
     public function __construct(Articles $articles)
     {
-	$this->articles = $articles;
-
+	    $this->articles = $articles;
     }
     
-    public function index($url='')
+    public function index($url='articles')
     {
-       $article = $this->articles->getByUrl($url);
-       echo $article->url. ' ' .$article->page->name.'<br>';
-        
-
-/*    
-        
-     $data =[
-    	    'meta' => $articles->meta(),
-    	    'title' => $articles->title(),
-    	    'list' => $articles->items(),
-    	    ];
-    	if ($articles->isPage()) {
-    	    $data['text'] = $articles->text();
-    	    return view('articles.page', $data);
-    	} else {
-    	    return view('articles.list', $data);
+        $this->articles->loadByUrl($url);
+        $page = $this->articles->getPage();
+        if ($page->node == 1) {
+            return view('articles.list', 
+                [
+                    'page' => $page, 
+                    'items' => $this->articles->getItems(),
+                    'meta' => $this->articles->getMeta(),
+                ]);
+        } else {
+            return view('articles.page', 
+                [
+                    'page' => $page,
+                    'meta' => $this->articles->getMeta(),
+                ]);
         }
-        */
     }
 
 }

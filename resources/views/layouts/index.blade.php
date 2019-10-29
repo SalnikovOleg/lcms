@@ -1,17 +1,20 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>{{(isset($meta['title']) ? $meta['title'] .' - ' : '') . config('app.name')}}</title>
-        <meta name="description" content="{{isset($meta['description']) ? $meta['description'] : ''}}">
-        <meta name="keywords" content="{{isset($meta['keywords']) ? $meta['keyword'] : ''}}">
-
-    </head>
+@include('layouts.header') 
     <body>
-        <div class="">
+	    <div id="headaContainer" class="">
+            headContainer's blocks columns<br>
+                
+            <div id="menuRow" class="">
+            @widget('menu')
+            </div> 
+        </div>
+
+        <div id="contentacContainer" class="">
             @yield('content')
+        </div>
+
+        <div id="footContainer" class="">
+            footContainer's blocks loop by footer's columns 
+        
         </div>
     </body>
 </html>
