@@ -10,7 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
-Route::group(['prefix'=>App\Http\Middleware\LocaleMiddleware::getLocale()], function() {
+Route::group(['prefix'=>App\Http\Middleware\LocaleMiddleware::getLocale(),
+'middleware'=>'widgets'], function() {
 
     Route::get('/', 'MainController@index');
     

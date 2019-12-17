@@ -20,6 +20,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\LocaleMiddleware::class,
+        //\App\Http\Middleware\WidgetMiddleware::class,
     ];
 
     /**
@@ -61,6 +62,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'widgets' => \App\Http\Middleware\WidgetMiddleware::class,
     ];
 
     /**

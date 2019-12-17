@@ -2,19 +2,18 @@
 
 namespace App\Widgets;
 
-//use App\Models\Tables\UsersWidgets;
+use App\Models\Tables\UsersWidgets;
 use App\Models\Tables\WidgetPlaces;
 use App;
+use View;
 
 class Widget
 {
     private $widgets;
-    //private $usersWidgets; // model 
 
     public function __construct()
     {
         $this->widgets = config('widgets');
-        //$this->usersWidget = usersWidgets;
     }
 
     public function show($name, $data=[])
@@ -30,33 +29,35 @@ class Widget
      */ 
     public function showWidgets()
     {
-        $usersWidgets = $this->getUsersWidgets();
+        $usersWidgets = UsersWidgets::get()->where('disabled',0)->all();
         $widgetContent = $this->getWidgetPlaces();
-        print_r($widgetContent);
+   
         foreach($usersWidgets as $w) {
-            if (isset($this->widgets[$w['name']])) {
-                $obj = App::make($this->widgets[$w['name']], $w['data']);
-                $method = $w['method'] && method_exists($obj, $w['method']) ?
-                    $w['method'] : 'execute';
-                $widgretContent[$w['place']] .= $obj->{$method}(); 
+            if (isset($this->widgets[$w->name])) {
+                $data = json_encode($w->data,true);
+                $data = is_array($data) ? $data : [];
+                $data['object_id'] = $w['object_id'];
+                $obj = App::make($this->widgets[$w->name]);
+                $method = $w->method && method_exists($obj, $w->method) ?
+                                                 $w->method : 'execute';
+                if (!isset($widgetContent[$w->place])) {
+                     $widgetContent[$w->place] = ''; 
+                } 
+                $widgetContent[$w->place] .= $obj->{$method}($data);
             }
         }
+
         foreach($widgetContent as $place => $content) {
             View::share($place, $content);
         }
     }
 
-    private  function getUsersWidgets() 
-    {
-        return [
-            ['name'=>'menu', 'place'=>'FOOTER_MENU', 'method'=>'', 'data'=>[]]
-        ];
-    }
-
     private function getWidgetPlaces() 
     {
-        return WidgetPlaces::all()->all();
-      //  return ['FOOTER_MENU'=>''];
+        $dataset =  WidgetPlaces::all()->pluck('name')->toArray();
+        return array_map(function($item) {
+            return $item = '';
+        }, array_flip($dataset) );
     }
      
 }

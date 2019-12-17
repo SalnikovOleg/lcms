@@ -1,5 +1,5 @@
 @extends('layouts.index')
-{{--
+{{-- there are two way to set meta tags : push to stack meta and pass in array $meta
 @push('meta')
         <title>{{($page->content->meta_title?$page->content->meta_title .' - ' : '') . config('app.name')}}</title>
         <meta name="description" content="{{ $page->content->meta_description}}">

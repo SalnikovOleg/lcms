@@ -8,5 +8,5 @@ interface ContractWidget
     /**
      * return view('widgets.widgetName', ['data'=>$data]);
      */
-    public function execute();
+    public function execute($params=[]);
 }

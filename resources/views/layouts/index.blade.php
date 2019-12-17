@@ -2,9 +2,9 @@
     <body>
 	    <div id="headaContainer" class="">
             headContainer's blocks columns<br>
-                
+      
             <div id="menuRow" class="">
-            @widget('menu')
+            {!!$MAIN_MENU!!}
             </div> 
         </div>
 

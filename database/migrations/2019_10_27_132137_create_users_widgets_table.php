@@ -20,7 +20,7 @@ class CreateUsersWidgetsTable extends Migration
             $table->string('method', 50)->nullable();
             $table->integer('object_id')->nullable();
             $table->json('data')->nullable();
-            $table->tinyInteger('disbled')->default(0);
+            $table->tinyInteger('disabled')->default(0);
             $table->timestamps();
         });
     }
