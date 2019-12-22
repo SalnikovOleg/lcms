@@ -26,6 +26,11 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
+        Route::bind('path', function($value) {
+    	  //cut all after ?
+    	    $key =md5($value);
+    	    return \App\Models\Tables\Routes::where('key',$key)->firsOrFail();
+        });
     }
 
     /**

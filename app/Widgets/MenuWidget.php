@@ -8,19 +8,17 @@ use App\Models\Tables\MenuItems;
 class MenuWidget implements ContractWidget
 {
     private $items;
+    private $menuType;
 
-    public function execute($params=[])
+    public function execute($object_id)
     {
-        $menuType = isset($params['object_id']) && $params['object_id']
-            ? $params['object_id'] : 1;
-        $view = isset($params['view']) 
-            ? $params['view'] : ($menuType == 1 ? 'menu' : 'links');
-        
-        $this->items = MenuItems::getActiveByMenuType($menuType)->toArray();
+        $this->menuType = $object_id ?? 1;
+        $view = $this->menuType == 1 ? 'widgets.menu' : 'widgets.links';
+        $this->items = MenuItems::getActiveByMenuType($this->menuType)->toArray();
         $items = [];
         $items = $this->getSubitems(null, $items);
          
-        return view('widgets.'.$view, ['items'=>$items]);
+        return view($view, ['items'=>$items]);
     }
 
     private function getSubitems($parent, &$items)

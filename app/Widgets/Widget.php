@@ -34,16 +34,13 @@ class Widget
    
         foreach($usersWidgets as $w) {
             if (isset($this->widgets[$w->name])) {
-                $data = json_encode($w->data,true);
-                $data = is_array($data) ? $data : [];
-                $data['object_id'] = $w['object_id'];
                 $obj = App::make($this->widgets[$w->name]);
                 $method = $w->method && method_exists($obj, $w->method) ?
                                                  $w->method : 'execute';
                 if (!isset($widgetContent[$w->place])) {
                      $widgetContent[$w->place] = ''; 
                 } 
-                $widgetContent[$w->place] .= $obj->{$method}($data);
+                $widgetContent[$w->place] .= $obj->{$method}($w->object_id);
             }
         }
 

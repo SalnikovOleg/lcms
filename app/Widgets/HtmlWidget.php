@@ -1,21 +1,26 @@
-
 <?php
-
 namespace App\Widgets;
 
 use App\Widgets\Contract\ContractWidget;
 use App\Models\Tables\PagesLang;
+use App;
 
 class HtmlWidget implements ContractWidget
 {
+    private $pageId;
 
-    public function execute($params=[])
+    public function execute($object_id)
     {
-        $pageId = isset($params['object_id']) 
-            ? (int)$params['object_id'] : 0;
-      
-        $page = Pages::get()->where('id',$pageId)->where('lang', App:getLocale());
+        $this->pageId = $object_id ?? 0; 
 
-        return $page->text;
+        $page = PagesLang::where('id',$this->pageId)
+                ->where('lang', App::getLocale())
+                ->first();
+
+        if (is_null($page)) {
+            return '';
+        }
+
+        return view('widgets.htmlwidget', ['content' => $page->text]);
     }
 }

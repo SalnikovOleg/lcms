@@ -1,6 +1,6 @@
 @include('layouts.header') 
     <body>
-	    <div id="headaContainer" class="">
+	    <div id="headContainer" class="">
             headContainer's blocks columns<br>
       
             <div id="menuRow" class="">
@@ -8,7 +8,11 @@
             </div> 
         </div>
 
-        <div id="contentacContainer" class="">
+        <div id="leftContainer" class="">
+        {!!$LEFT_COL!!}
+        </div>
+
+        <div id="contentContainer" class="">
             @yield('content')
         </div>
 

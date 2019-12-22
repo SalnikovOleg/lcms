@@ -18,9 +18,12 @@ Route::group(['prefix'=>App\Http\Middleware\LocaleMiddleware::getLocale(),
     Route::get('articles/{url?}', 'ArticlesController@index')->name('articles');
     
     Route::get('news/{url}', 'NewsController@index')->name('news');
-    
-    Route::get('{url}', function(){
-    //try select md5($url) in model which store hashes and url and class and id all pages;
-    //call selected object
+   // Route::get('test/{url}', 'TestController@index');
+   
+    Route::get('{path}', function(App\Models\Routes $router){
+	    return $router->toArray();
+	    //try select md5($url) in table routes
+	    //call selected object
     });
+    
 });
