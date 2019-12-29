@@ -51,12 +51,4 @@ class PagesTree {
         return $this->items;
     }
 
-    public function getMeta()
-    {
-        return [
-            'title' => $this->page->content->meta_title,
-            'description' => $this->page->content->meta_description,
-            'keywords' => $this->page->content->meta_keywords,
-        ];
-    }
 }

@@ -24,12 +24,12 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-
         parent::boot();
         Route::bind('path', function($value) {
-    	  //cut all after ?
-    	    $key =md5($value);
-    	    return \App\Models\Tables\Routes::where('key',$key)->firsOrFail();
+    	    if(strpos($value,'?')>0) {
+    		$value = substr($value, 0, strpos($value, '?'));
+    	    }
+    	    return \App\Models\Tables\Routes::where('key',md5($value))->firstOrFail();
         });
     }
 

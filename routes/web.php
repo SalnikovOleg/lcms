@@ -15,13 +15,20 @@ Route::group(['prefix'=>App\Http\Middleware\LocaleMiddleware::getLocale(),
 
     Route::get('/', 'MainController@index');
     
-    Route::get('articles/{url?}', 'ArticlesController@index')->name('articles');
-    
+    Route::get('articles/{url?}', 'ArticlesController@index')->name('articles');    
     Route::get('news/{url}', 'NewsController@index')->name('news');
-   // Route::get('test/{url}', 'TestController@index');
+    Route::get('pages/{url}', 'PagesController@index')->name('pages');
+
+    Route::get('country/{url}', 'CountryController@index')->name('country');
+    Route::get('category/{url}', 'CategoryController@index')->name('category');
+    Route::get('programm/{url}', 'ProgrammController@index')->name('programm');
+    Route::get('school/{url}', 'SchoolController@index')->name('school');
+    
+    Route::get('test/{url}', 'TestController@index');
    
-    Route::get('{path}', function(App\Models\Routes $router){
-	    return $router->toArray();
+    //Routes model bind in RouteServiceProvider
+    Route::get('{path}', function(App\Models\Tables\Routes $router){
+	    print_r( $router->toArray());
 	    //try select md5($url) in table routes
 	    //call selected object
     });
