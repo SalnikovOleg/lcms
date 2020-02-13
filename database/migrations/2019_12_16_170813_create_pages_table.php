@@ -23,7 +23,7 @@ class CreatePagesTable extends Migration
             $table->string('img',256)->nullable();
             $table->boolean('selected')->default(false);
             $table->boolean('disabled')->default(false);
-            $table->boolean('deleted')->default(false);
+            $table->softDeletes();
         });
     }
 

@@ -1,4 +1,6 @@
-<h1>{{$page->title}}</h1>
+@extends('layouts.index')
+@section('content')
+<h1>{{$page->content->title}}</h1>
 
 <div class="">  
 there will be include view for programs list
@@ -6,10 +8,10 @@ there will be include view for programs list
 <div>
 
 <div class="">
-{!!$page->text!!}
+{!!$page->content->text!!}
 </div>
 
 <div class="">
 {!!$form!!}
 </div>
-
+@endsection

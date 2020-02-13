@@ -22,6 +22,7 @@ class CreateUsersWidgetsTable extends Migration
             $table->json('data')->nullable();
             $table->tinyInteger('disabled')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

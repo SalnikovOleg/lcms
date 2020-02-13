@@ -22,8 +22,8 @@ class CreateArticlesTable extends Migration
             $table->string('url',256)->nullable();
             $table->string('img',256)->nullable();
             $table->boolean('selected')->default(false);
-            $table->boolean('disabled')->default(false);
-            $table->boolean('deleted')->default(false);
+            $table->softDeletes();
+            $table->boolean('deleted_at')->nullable()->default(null);
         });
     }
 

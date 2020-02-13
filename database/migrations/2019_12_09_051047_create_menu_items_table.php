@@ -25,7 +25,7 @@ class CreateMenuItemsTable extends Migration
             $table->integer('parent')->nullable();
             $table->tinyInteger('node')->nullable();
             $table->boolean('disabled')->default(false);
-            $table->boolean('deleted')->default(false);
+            $table->softDeletes();
             $table->string('name', 50)->nullable();
             $table->string('url', 256)->nullable();
             $table->timestamps();

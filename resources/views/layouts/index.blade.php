@@ -1,25 +1,35 @@
 @include('layouts.header') 
-    <body>
-	    <div id="headContainer" class="">
+<body>
+<div class="container">
+	<div class="row" id="topHeadLine">
+        <div class="col-md-12"> 
             headContainer's blocks columns<br>
-      
-            <div id="menuRow" class="">
+        </div>  
+    </div><!--/row headContainer-->
+
+    <div class="row" id="menuRow">
+        <div class="col-md-12">
             {!!$MAIN_MENU!!}
-            </div> 
         </div>
+    </div><!-- /row menuRow--> 
 
-        <div id="leftContainer" class="">
-        {!!$LEFT_COL!!}
-        </div>
-
-        <div id="contentContainer" class="">
+    <div class="row" id="contentBlock">
+        <div class="col-md-9 col-md-push-3" id="contentContainer">
             @yield('content')
         </div>
 
-        <div id="footContainer" class="">
-            footContainer's blocks loop by footer's columns 
-        
+        <div class="col-md-3 col-md-pull-9" id="leftContainer">
+            {!!$LEFT_COL!!}
         </div>
-    </body>
+    </div><!-- /row contentBlock -->
+
+    <div clase="row" id="footContainer">
+        <div class="col-md-12">
+           footContainer's blocks loop by footer's columns
+        </div>
+    </div><!-- /row footerContainer -->
+
+</div><!--/container-->
+</body>
 </html>
 

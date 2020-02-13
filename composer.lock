@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a81ea5a73ebc29fdd013d76177a616e",
+    "content-hash": "9afc78631b0c43afb806caa808b65557",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2835,6 +2835,57 @@
             "time": "2017-11-27T11:13:29+00:00"
         },
         {
+            "name": "twbs/bootstrap",
+            "version": "v4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "8a628b943cf31ca0a002c08af661a95772480225"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/8a628b943cf31ca0a002c08af661a95772480225",
+                "reference": "8a628b943cf31ca0a002c08af661a95772480225",
+                "shasum": ""
+            },
+            "replace": {
+                "twitter/bootstrap": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                },
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "https://getbootstrap.com",
+            "keywords": [
+                "JS",
+                "css",
+                "framework",
+                "front-end",
+                "mobile-first",
+                "responsive",
+                "sass",
+                "web"
+            ],
+            "time": "2018-01-18T18:29:48+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v3.6.0",
             "source": {
@@ -4144,18 +4195,18 @@
             "authors": [
                 {
                     "name": "Geert Bergman",
-                    "role": "Project Author",
-                    "homepage": "http://www.scrivo.org/"
+                    "homepage": "http://www.scrivo.org/",
+                    "role": "Project Author"
                 },
                 {
                     "name": "Vladimir Jimenez",
-                    "role": "Contributor",
-                    "homepage": "https://allejo.io"
+                    "homepage": "https://allejo.io",
+                    "role": "Contributor"
                 },
                 {
                     "name": "Martin Folkers",
-                    "role": "Contributor",
-                    "homepage": "https://twobrain.io"
+                    "homepage": "https://twobrain.io",
+                    "role": "Contributor"
                 }
             ],
             "description": "Server side syntax highlighter that supports 185 languages. It's a PHP port of highlight.js",

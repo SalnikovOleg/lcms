@@ -14,8 +14,9 @@ class CreateTextsTable extends Migration
     public function up()
     {
         Schema::create('texts', function (Blueprint $table) {
-            $table->integer('module_id');
-            $table->integer('object_id');
+            $table->bigIncrements('id');
+            $table->integer('content_id');
+            $table->string('content_type',100);
             $table->char('lang',2);
             $table->string('name',256)->nullable();
             $table->string('title',256)->nullable();
@@ -27,7 +28,6 @@ class CreateTextsTable extends Migration
             $table->string('img', 256)->nullable();
             $table->string('img_alt',256)->nullable();
             $table->timestamps();
-            $table->primary(['module_id','object_id','lang']);
         });
     }
 

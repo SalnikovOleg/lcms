@@ -9,7 +9,8 @@
         <meta name="description" content="{{isset($meta['description']) ? $meta['description'] : ''}}">
         <meta name="keywords" content="{{isset($meta['keywords']) ? $meta['keywords'] : ''}}">
     @endif
-
+<link rel="stylesheet" href="/css/bootstrap-min.css">
+<link rel="stylesheet" href="/css/index.css">
     @stack('meta')
     @stack('css')
     @stack('js')

@@ -1,10 +1,18 @@
 <?php
 return [
-    1 => ['name' => 'articles', 'class' => 'ArticlesController'],
-    2 => ['name' => 'news', 'class' => 'NewsController'],
-    3 => ['name' => 'pages', 'class' => 'PagesController'],
-    4 => ['name' => 'country', 'class' => 'CountryController'],
-    5 => ['name' => 'category', 'class' => 'CategoryController'],
-    6 => ['name' => 'programm', 'class' => 'ProgrammController'],
-    7 => ['name' => 'school', 'class' => 'SchoolController'],
+    'morphMap' =>[
+        'country' => 'App\Models\Tables\Country',
+        'category' => 'App\Models\Tables\Category',
+        'programm' => 'App\Models\Tables\Programm',
+        'school' => 'App\Models\Tables\School',
+    ],
+    'modules'=>[
+        'articles',
+        'news',
+        'pages',
+        'country',
+        'category',
+        'programm',
+        'school'
+    ]
 ];
