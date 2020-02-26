@@ -13,12 +13,12 @@ class Contacts extends Controller
         $options = App::make('options');
         $contacts = $options->getByGroup('contacts');
         $data = [
-            'title' => trans('Contacts'),
+            'title' => trans('contacts.Contacts'),
             'email' => $options->get('domain'),
             'phones' => json_decode($contacts['phones']),
             'address' => $contacts['address'],
             'meta' => [
-                'meta_title' => trans('Contacts'),
+                'meta_title' => trans('contacts.Contacts'),
                 'meta_keywords' => '',
                 'meta_description' => ''
             ],
@@ -26,4 +26,5 @@ class Contacts extends Controller
 
        return view('contacts', $data);
     }
+
 }

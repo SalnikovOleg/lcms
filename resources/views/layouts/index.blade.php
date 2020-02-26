@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="row" id="topHeadLine">
         <div class="col-md-12"> 
-            headContainer's blocks columns<br>
+            headContainers blocks columns<br>
         </div>  
     </div><!--/row headContainer-->
 
@@ -25,7 +25,7 @@
 
     <div clase="row" id="footContainer">
         <div class="col-md-12">
-           footContainer's blocks loop by footer's columns
+           footContainers blocks loop by footers columns
         </div>
     </div><!-- /row footerContainer -->
 

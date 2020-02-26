@@ -3,7 +3,7 @@
 <h1>{{$title}}</h1>
 
 <div class="">
-@include('forms.consult')
+@include('forms.question', ['formId'=>'contacts'])
 </div>
 
 <div class="">

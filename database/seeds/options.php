@@ -21,7 +21,13 @@ class options extends Seeder
         ['key'=>'phones', 'lang'=>'ru', 'value'=>'[{"code":"phone","number":"+38 (095) 166-65-98"},{"code":"vodafone","number":"+38 (050) 166-65-98"},{"code":"kyevstar","number":"+38 (098) 513-11-15"}]', 'group'=>'contacts'],
         ['key'=>'email_admin', 'lang'=>'ru', 'value'=>'salnikov_oleg@ukr.net', 'group'=>'contacts'],
         ['key'=>'email_info', 'lang'=>'ru', 'value'=>'info@studybridge.com', 'group'=>'contacts'],
-        ['key'=>'email_support', 'lang'=>'ru', 'value'=>'info@studybridge.com', 'group'=>'contacts'],
+        ['key'=>'subject_info', 'lang'=>'ru', 'value'=>'subject info', 'group'=>'contacts'],
+        ['key'=>'email_order', 'lang'=>'ru', 'value'=>'info@studybridge.com', 'group'=>'contacts'],
+        ['key'=>'subject_order', 'lang'=>'ru', 'value'=>'subject order', 'group'=>'contacts'],
+        ['key'=>'email_webinar', 'lang'=>'ru', 'value'=>'info@studybridge.com', 'group'=>'contacts'],
+        ['key'=>'subject_webinar', 'lang'=>'ru', 'value'=>'subject webinar', 'group'=>'contacts'],
+        ['key'=>'email_meeting', 'lang'=>'ru', 'value'=>'info@studybridge.com', 'group'=>'contacts'],
+        ['key'=>'subject_meeting', 'lang'=>'ru', 'value'=>'subject meeting', 'group'=>'contacts'],
         ['key'=>'address', 'lang'=>'ru', 'value'=>'01001, г. Киев ул. Эспланадная 20, оф. 407', 'group'=>'contacts'],
         ]);
     }
