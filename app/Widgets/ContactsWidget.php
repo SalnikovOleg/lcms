@@ -1,11 +1,10 @@
-
 <?php
 namespace App\Widgets;
 
 use App\Widgets\Contract\ContractWidget;
 use App;
 
-class ContactWidget implements ContractWidget
+class ContactsWidget implements ContractWidget
 {
 
     public function execute($object_id)
@@ -28,7 +27,7 @@ class ContactWidget implements ContractWidget
         $options = App::make('options');
         $contacts = $options->getByGroup('contacts');
         
-        return view('widgets.phones', [
+        return view('widgets.address', [
             'phones' => json_decode($contacts['phones']),
             'address' => $contacts['address'],
         ]);

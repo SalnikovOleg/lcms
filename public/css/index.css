@@ -1,2 +1,27 @@
-body {
-}}
+body {}
+/*col-xs-12 col-sm-12 col-md-9 col-lg-9
+.row{ border:1px solid gray;}*/
+
+.footerContainer{background-color:gray;}
+.copyright{
+    border-top : 5px solid #fff;
+    text-align : center;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #pagestree a.node{font-size: 14px;}	
+    #plate .school_item{height:325px;}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    #navigator_form{width:49%; float:left;}
+    #navigator_form table.pages{margin:0;}
+    #plate .school_item{height:310px;}
+    #paging .items_on_page{width:49%; float:left; text-align: right;}
+    #line .school_item{width:730px;}
+}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #plate .school_item{height:310px;}
+}

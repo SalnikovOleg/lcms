@@ -26,6 +26,8 @@ class WidgetPlaces extends Seeder
             ['name' => 'FOOT_COL3'],
             ['name' => 'FOOT_COL4'],
             ['name' => 'FOOT_LINE'],
+            ['name' => 'SOCIAL'],
+            ['name' => 'SEARCH'],
         ]);
     }
 }
