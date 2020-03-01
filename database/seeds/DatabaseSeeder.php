@@ -16,6 +16,6 @@ class DatabaseSeeder extends Seeder
         //$this->call(UserswidgetSeeder::class);
         //$this->call(menuitems::class);
         //$this->call(PagesSeeder::class);
-        $this->call(options::class);
+        $this->call(Options::class);
     }
 }
