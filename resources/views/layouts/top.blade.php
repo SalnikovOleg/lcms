@@ -1,27 +1,26 @@
+<div class="top_line">
+    <div class="container d-flex flex-row-reverse"> 
+        {!!$SOCIAL!!} head line 
+    </div>
+</div>
+
 <div class="container">
     <div class="row">
-        <div class="col-md-12"> 
-            {!!$HEAD_LINE!!}head line 
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            {!!$LOGO!!} LOGO
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
+        <div class="hidden-xs col-sm-3 col-md-3 col-lg-3">
             {!!$HEAD_COL1!!} col 1
         </div>
-        <div class="col-md-3">
-            {!!$HEAD_COL2!!} col 2
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            {!!$HEAD_COL2!!}
         </div>
-        <div class="col-md-3">
-            {!!$HEAD_COL3!!}
+        <div class="cok-xs-12 col-sm-3 col-md-3 col-lg-3">
+            {!!$HEAD_COL3!!} col 3
         </div>
-        <div class="col-md-3">
-            {!!$HEAD_COL4!!} col 4
-        </div>
-    </div><!--/row headContainer-->
+    </div>
+</div><!--/headContainer-->
 
-    <div class="row" id="menuRow">
-        <div class="col-md-12">
-            {!!$MAIN_MENU!!}
-        </div>
-    </div><!-- /row menuRow--> 
-</div>
+<div class="menu_line container-fluid">
+    {!!$MAIN_MENU!!}
+</div><!-- /menu_line--> 

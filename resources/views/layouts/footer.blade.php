@@ -1,6 +1,6 @@
 <div class="footerContainer">
-<div class="container">
 
+<div class="container">
 <div class="row">
     <div class="col-sm-6 col-md-3 col-lg-3">
     {!!$FOOT_COL1!!}
@@ -16,14 +16,13 @@
         {!!$FOOT_COL3!!}
     </div>
 </div>
-
 </div>
 
 <div class="copyright">
-    <div class="container"><div calss="row"><div class="col-sm-12">
-    © 2011 - STUDY BRIDGE - <a href='/'>образование за рубежом</a>
-    </div></div></div>
+ <div class="container">
+ © 2011 - STUDY BRIDGE - <a href='/'>образование за рубежом</a>
 </div>
+
 </div>
 
 <!-- / footerContainer -->

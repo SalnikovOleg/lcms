@@ -13,11 +13,10 @@ class WidgetPlaces extends Seeder
     {
         DB::table('widget_places')->truncate();
         DB::table('widget_places')->insert([
-            ['name' => 'HEAD_LINE'],
             ['name' => 'HEAD_COL1'],
             ['name' => 'HEAD_COL2'],
             ['name' => 'HEAD_COL3'],
-            ['name' => 'HEAD_COL4'],
+            ['name' => 'LOGO'],
             ['name' => 'MAIN_MENU'],
             ['name' => 'LEFT_COL'],
             ['name' => 'BOTTOM'],

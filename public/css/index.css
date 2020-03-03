@@ -1,4 +1,5 @@
 body {}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 }
@@ -12,10 +13,16 @@ body {}
 
 .container{ border:1px solid red;}
 
+.top_line{
+    background-color:#000;
+    color:white;
+}
+
 .footerContainer{
     background-color:gray;
-    color: white
+    color: white;
 }
 .copyright{
-    border: 4px solid #fff;
+    border-top: 4px solid #fff;
 }
+a.cpr { color : white :
