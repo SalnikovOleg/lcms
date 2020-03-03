@@ -28,6 +28,7 @@ class CreateMenuItemsTable extends Migration
             $table->softDeletes();
             $table->string('name', 50)->nullable();
             $table->string('url', 256)->nullable();
+            $table->string('img', 256)->nullable();
             $table->timestamps();
         });
     }
