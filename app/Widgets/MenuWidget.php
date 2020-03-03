@@ -3,7 +3,7 @@
 namespace App\Widgets;
 
 use App\Widgets\Contract\ContractWidget;
-use App\Models\Tables\MenuItems;
+use App\Models\Tables\Menu;
 
 class MenuWidget implements ContractWidget
 {
@@ -14,7 +14,7 @@ class MenuWidget implements ContractWidget
     {
         $this->menuType = $object_id ?? 1;
         $view = $this->menuType == 1 ? 'widgets.menu' : 'widgets.links';
-        $this->items = MenuItems::getActiveByMenuType($this->menuType)->toArray();
+        $this->items = Menu::getActiveByMenuType($this->menuType)->toArray();
         $items = [];
         $items = $this->getSubitems(null, $items);
          

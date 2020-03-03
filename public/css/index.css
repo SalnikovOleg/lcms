@@ -17,7 +17,9 @@ body {}
     background-color:#000;
     color:white;
 }
-
+.menu_line{
+	background-color :#ec5e5d;
+}
 .footerContainer{
     background-color:gray;
     color: white;
@@ -25,4 +27,8 @@ body {}
 .copyright{
     border-top: 4px solid #fff;
 }
-a.cpr { color : white :
+a.cpyr { color : white }
+a.cpyr:link { color : white }
+a.cpyr:visited { color : white }
+a.cpyr:active { color : white }
+

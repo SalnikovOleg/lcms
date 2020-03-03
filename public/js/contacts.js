@@ -1,23 +1,18 @@
-
-alert('djdjd');
-/*
-function send(formId){
- alert(formId);
-}
-contacts.sendQuestion = function(formId) {
+contacts = {
+	
+	sendQuestion(formId){
         //let data = this.readForm(formId); 
         //this.send(data);
         alert(formId);
-    }
+	},
 
-    readForm : (formId) => {
-        alert('read data' + formId);
-    },
+	readForm(formId){
+		alert('read data' + formId);
+	},
     
-    send : (data) => {
+	send(data){
         // ajax post
         // show response
-    }
-    */
+	}
+   
 }
-

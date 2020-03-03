@@ -2,8 +2,8 @@
 
 namespace App\Widgets;
 
-use App\Models\Tables\UsersWidgets;
-use App\Models\Tables\WidgetPlaces;
+use App\Models\Tables\Widgets;
+use App\Models\Tables\Places;
 use App;
 use View;
 
@@ -29,7 +29,7 @@ class Widget
      */ 
     public function showWidgets()
     {
-        $usersWidgets = UsersWidgets::get()->where('disabled',0)->all();
+        $usersWidgets = Widgets::get()->where('disabled',0)->all();
         $widgetContent = $this->getWidgetPlaces();
    
         foreach($usersWidgets as $w) {
@@ -51,7 +51,7 @@ class Widget
 
     private function getWidgetPlaces() 
     {
-        $dataset =  WidgetPlaces::all()->pluck('name')->toArray();
+        $dataset =  Places::all()->pluck('name')->toArray();
         return array_map(function($item) {
             return $item = '';
         }, array_flip($dataset) );
