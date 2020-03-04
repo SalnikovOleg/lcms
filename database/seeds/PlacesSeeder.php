@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class WidgetPlaces extends Seeder
+class PlacesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,8 +11,8 @@ class WidgetPlaces extends Seeder
      */
     public function run()
     {
-        DB::table('widget_places')->truncate();
-        DB::table('widget_places')->insert([
+        DB::table('places')->truncate();
+        DB::table('places')->insert([
             ['name' => 'HEAD_COL1'],
             ['name' => 'HEAD_COL2'],
             ['name' => 'HEAD_COL3'],

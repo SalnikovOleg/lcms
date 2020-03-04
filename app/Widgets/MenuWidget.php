@@ -4,6 +4,7 @@ namespace App\Widgets;
 
 use App\Widgets\Contract\ContractWidget;
 use App\Models\Tables\Menu;
+use App\Models\Tables\Menutype;
 
 class MenuWidget implements ContractWidget
 {
@@ -12,13 +13,12 @@ class MenuWidget implements ContractWidget
 
     public function execute($object_id)
     {
-        $this->menuType = $object_id ?? 1;
-        $view = $this->menuType == 1 ? 'widgets.menu' : 'widgets.links';
-        $this->items = Menu::getActiveByMenuType($this->menuType)->toArray();
+        $menutype = Menutype::find($object_id);
+        $this->items = Menu::getActiveByMenuType($object_id)->toArray();
         $items = [];
         $items = $this->getSubitems(null, $items);
          
-        return view($view, ['items'=>$items]);
+        return view($menutype->view, ['items'=>$items]);
     }
 
     private function getSubitems($parent, &$items)
