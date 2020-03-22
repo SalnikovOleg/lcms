@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Menu extends Model
 {
     use SoftDeletes;
-    
+
     public static function getActiveByMenuType($menutype_id)
     {
         return self::where('menutype_id',$menutype_id)
             ->where('disabled',0)
             ->orderBy('parent')
-            ->get(['id','parent','node','name','url']);
+            ->get(['id','parent','node','name','url', 'img']);
     }
 
 }

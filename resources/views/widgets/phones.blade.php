@@ -1,8 +1,6 @@
-<div class="">
 @foreach($phones as $phone)
-<div class="">
-  <div class="icons icon_{{$phone->code}}"></div>
-  <div class="">{{$phone->number}}</div>
+<div class="phones">
+  <div class="code code_{{$phone['code']}}"></div>
+  <div><a href="tel:+38{{$phone['clear_number']}}">{{$phone['number']}}</a></div>
 </div>
 @endforeach
-</div>

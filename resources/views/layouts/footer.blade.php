@@ -1,4 +1,4 @@
-<div class="footerContainer">
+<div id="footerContainer">
 
 <div class="container">
 <div class="row">
@@ -20,7 +20,7 @@
 
 <div class="copyright">
  <div class="container">
- © 2011 - STUDY BRIDGE - <a class="cpyr" href='/'>образование за рубежом</a>
+ © 2011 - STUDY BRIDGE - <a href='/'>образование за рубежом</a>
 </div>
 
 </div>

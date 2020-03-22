@@ -1,4 +1,4 @@
-@include('layouts.header') 
+@include('layouts.header')
 
 <body>
 
@@ -16,6 +16,9 @@
         </div>
     </div><!-- /row contentBlock -->
 
+    <div class="row programm">
+        {!!$BOTTOM!!}
+    </div>
 </div><!--/container-->
 
 @include('layouts.footer')

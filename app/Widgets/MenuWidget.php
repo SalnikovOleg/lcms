@@ -17,14 +17,14 @@ class MenuWidget implements ContractWidget
         $this->items = Menu::getActiveByMenuType($object_id)->toArray();
         $items = [];
         $items = $this->getSubitems(null, $items);
-         
+
         return view($menutype->view, ['items'=>$items]);
     }
 
     private function getSubitems($parent, &$items)
     {
         $subItems = array_filter($this->items,
-            function($val) use ($parent) { 
+            function($val) use ($parent) {
                 return $val['parent'] == $parent;
             });
 

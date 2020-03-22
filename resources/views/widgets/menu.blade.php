@@ -30,5 +30,5 @@
 @endforeach
 
         </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-->
+    </div><!-- /.container-->
 </nav>

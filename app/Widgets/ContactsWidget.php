@@ -11,14 +11,18 @@ class ContactsWidget implements ContractWidget
     {
         return '';
     }
-    
+
     public function phones()
     {
         $options = App::make('options');
         $contacts = $options->getByGroup('contacts');
-        
+        $phones = json_decode($contacts['phones'], true);
+
+        array_walk($phones, function(&$item) {
+            $item['clear_number'] = str_replace(['-','(',')'], ['','',''], $item['number']);
+        });
         return view('widgets.phones', [
-            'phones' => json_decode($contacts['phones'])
+            'phones' => $phones
         ]);
     }
 
@@ -26,7 +30,7 @@ class ContactsWidget implements ContractWidget
     {
         $options = App::make('options');
         $contacts = $options->getByGroup('contacts');
-        
+
         return view('widgets.address', [
             'phones' => json_decode($contacts['phones']),
             'address' => $contacts['address'],

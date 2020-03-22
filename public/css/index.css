@@ -1,34 +1,105 @@
-body {}
-
+body {
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 }
-
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 }
+a{text-decoration : none }
+a:hover { text-decoration : underline }
 
-.container{ border:1px solid red;}
-
+.head-col {text-align: center;}
+.partner {margin-top:15px}
 .top_line{
     background-color:#000;
     color:white;
 }
-.menu_line{
-	background-color :#ec5e5d;
+.menu_line{ background-color :#ec5e5d; }
+
+/*social buttons block*/
+.social a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-image: url(../img/assets/sprite.png);
+    text-indent: -9999px;
 }
-.footerContainer{
+.social a.instagramm {
+    background-position: -36px 0;
+}
+.social a.facebook {
+    background-position: -73px 0;
+}
+.social a.telegram {
+    background-position: -110px 0;
+}
+
+/* phnes block*/
+.phone-col {
+    margin-top: 5px;
+    padding: 0;
+    text-align: left;
+}
+.phones{ display:inline-block}
+.phones a {
+    font-size : 20px;
+    color : #717171;
+}
+.phones div {
+    display: inline-block;
+    vertical-align: middle;
+}
+.code{
+    background-image: url(../img/assets/sprite.png);
+    width: 25px;
+    height: 30px;
+}
+.code_phone {
+    background-position: -52px -105px;
+}
+.code_vodafone {
+    background-position: 0 -105px;
+}
+.code_kyevstar {
+    background-position:  -25px -105px;
+}
+.consult {
+    padding: 10px;
+    margin-top: 20px;
+    background: #ec5e5d;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    color: white;
+    line-height: 1;
+    font-size: 20px;
+    text-shadow: 1px 1px #444;
+    cursor: pointer;
+}
+
+.container{ border:1px solid red;}
+
+.programm {
+    background-color:#ec5e5d;
+    padding: 20px 0;
+}
+.programm a { color : white;}
+
+/*footer containder */
+#footerContainer{
+    margin-top:15px;
     background-color:gray;
     color: white;
 }
+#footerContainer .row {
+    margin:20px 0 10px 0;
+}
+#footerContainer a { color : white }
 .copyright{
     border-top: 4px solid #fff;
+    padding: 10px 0;
 }
-a.cpyr { color : white }
-a.cpyr:link { color : white }
-a.cpyr:visited { color : white }
-a.cpyr:active { color : white }
-
