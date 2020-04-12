@@ -1,8 +1,8 @@
-@extends('layouts.index')
+@extends('index')
 @section('content')
 <h1>{{$page->content->title}}</h1>
 
-<div class="">  
+<div class="">
 there will be include view for programs list
 {{--include  programs --}}
 <div>

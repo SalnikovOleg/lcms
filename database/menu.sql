@@ -59,3 +59,6 @@ INSERT INTO `menus` (`id`, `menutype_id`, `lang`, `parent`, `node`, `name`, `url
 (68, 6, 'ru', NULL, 0, 'instagramm', 'https://www.instagram.com/study_bridge/'),
 (69, 6, 'ru', NULL, 0, 'facebook', 'https://www.facebook.com/StudyBridge'),
 (70, 6, 'ru', NULL, 0, 'telegram', 'https://t.me/studybridge');
+
+INSERT INTO `menus` (`id`, `menutype_id`, `lang`, `parent`, `node`, `name`, `url`) VALUES
+(NULL, '10', 'ru', NULL, '1',  NULL, 'Меню', 'admin/menu');

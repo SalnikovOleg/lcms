@@ -13,6 +13,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^1.0",
+        "laravel/ui": "1.2",
         "twbs/bootstrap": "4.0.0"
     },
     "require-dev": {

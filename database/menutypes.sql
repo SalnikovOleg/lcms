@@ -6,4 +6,5 @@ INSERT INTO `menutypes` (`id`, `name`, `view`) VALUES
 (5, 'programm', 'widgets.programm'),
 (6, 'social', 'widgets.social'),
 (7, 'logo', 'widgets.logo'),
-(8, 'partnerlogo', 'widgets.logo');
+(8, 'partnerlogo', 'widgets.logo'),
+(10, 'admin', 'admin.menu');

@@ -1,4 +1,4 @@
-@extends('layouts.index')
+@extends('index')
 
 @section('content')
 <h1>{{$page->content->name}}</h1>

@@ -10,8 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
+Auth::routes();
 Route::group(['prefix'=>'admin', 'middleware'=>['widgets', 'auth']], function() {
-    Route::get('dashboard/', 'Admin\DashboardController@index');
+    Route::get('/', 'Admin\DashboardController@index');
 });
 
 Route::group(['prefix'=>App\Http\Middleware\LocaleMiddleware::getLocale(),
@@ -29,7 +30,7 @@ Route::group(['prefix'=>App\Http\Middleware\LocaleMiddleware::getLocale(),
     Route::post('send/meeting', 'SendController@meeting')
         ->name('send.meeting');
 
-    Route::get('/', 'MainController@index');
+    Route::get('/', 'HomeController@index');
     Route::get('contacts', 'Contacts@index')->name('contwcts');
 
     Route::get('articles/{url?}', 'ArticlesController@index')->name('articles');    Route::get('news/{url}', 'NewsController@index')->name('news');
